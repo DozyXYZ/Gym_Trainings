@@ -1,7 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Container, CssBaseline, Button } from "@mui/material";
 
-
 function App() {
 
   return (
@@ -10,16 +9,20 @@ function App() {
 
         <AppBar position="static" style={{ marginBottom: "20px" }}>
           <Toolbar>
-            <Typography variant="h6">
+            <Typography variant="h6" style={{ flexGlow: 1 }}>
               Crimson Training
             </Typography>
+
+            <nav style={{ marginLeft: 'auto' }}>
+              <Button color="inherit">
+                <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Customers</Link>
+              </Button>
+              <Button color="inherit">
+                <Link to="/trainings" style={{ textDecoration: 'none', color: 'inherit' }}>Trainings</Link>
+              </Button>
+            </nav>
           </Toolbar>
         </AppBar>
-
-        <nav>
-          <Button><Link to="/">Customers</Link></Button>
-          <Button><Link to="/trainings">Trainings</Link></Button>
-        </nav>
 
         <Outlet />
 
