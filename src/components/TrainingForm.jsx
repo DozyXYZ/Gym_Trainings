@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import MenuItem from '@mui/material/MenuItem';
 import dayjs from 'dayjs';
 
@@ -9,9 +9,9 @@ export default function Trainingform({ training, customers, handleDateChange, ha
     return (
         <>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker
-                    label="Date"
-                    value={training.date ? dayjs(training.date) : null}
+                <DateTimePicker
+                    label="Date - Time"
+                    value={training.date ? dayjs(training.date) : dayjs()}
                     onChange={handleDateChange}
                     format="DD/MM/YYYY"
                 />
