@@ -1,12 +1,18 @@
 // module for all fetch
 // import.meta.env.VITE_API_URL is the URL of the API
 
+
+
+// -------------------------------------------------------------------------
+// Customer API functions
+// -------------------------------------------------------------------------
+
 // fetch all customers
 export function fetchCustomers() {
     return fetch(import.meta.env.VITE_API_URL + "customers")
         .then(response => {
             if (!response.ok) {
-                throw new Error("Error in fecth: " + response.statusText);
+                throw new Error("Error in fetch: " + response.statusText);
             }
             return response.json();
         });
@@ -66,12 +72,45 @@ export function deleteCustomer(url) {
         });
 }
 
+
+// -------------------------------------------------------------------------
+// Training API functions
+// -------------------------------------------------------------------------
+
 // fetch all trainings
 export function fetchTrainings() {
-    return fetch(import.meta.env.VITE_API_URL + "trainings")
+    return fetch(import.meta.env.VITE_API_URL + "gettrainings")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Error in fecth: " + response.statusText);
+            }
+            return response.json();
+        });
+}
+
+// save new training session
+export function saveTraining(newTraining) {
+    return fetch(import.meta.env.VITE_API_URL + "trainings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newTraining)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error in save: " + response.statusText);
+            }
+            return response.json();
+        });
+}
+
+// delete training
+export function deleteTraining(url) {
+    return fetch(url, {
+        method: "DELETE"
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error in delete: " + response.statusText);
             }
             return response.json();
         });

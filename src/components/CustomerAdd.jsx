@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Button } from "@mui/material";
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
+import AddIcon from '@mui/icons-material/Add';
 import { saveCustomer } from "../projectapi";
 import CustomerForm from "./CustomerForm";
-import AddIcon from '@mui/icons-material/Add';
 
 export default function Addcustomer(props) {
     const [open, setOpen] = useState(false);
@@ -18,6 +18,16 @@ export default function Addcustomer(props) {
     });
 
     const handleClickOpen = () => {
+        const newCustomer = {
+            firstname: "",
+            lastname: "",
+            streetaddress: "",
+            postcode: "",
+            city: "",
+            email: "",
+            phone: ""
+        }
+        setCustomer(newCustomer);
         setOpen(true);
     };
 
