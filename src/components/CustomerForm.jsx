@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material";
 
-export default function CustomerForm({ customer, handleInputChange }) {
+export default function Customerform({ customer, handleInputChange }) {
     return (
         <>
             <TextField

@@ -6,6 +6,7 @@ import App from './App.jsx';
 import Customerlist from './components/CustomerList.jsx';
 import Traininglist from './components/TrainingList.jsx';
 import Trainingcalendar from './components/TrainingCalendar.jsx';
+import Trainingstats from './components/TrainingStats.jsx';
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,8 @@ const router = createBrowserRouter([
     children: [
       { element: <Customerlist />, index: true },
       { path: "trainings", element: <Traininglist /> },
-      { path: "trainingscalendar", element: <Trainingcalendar /> }
+      { path: "trainingscalendar", element: <Trainingcalendar /> },
+      { path: "trainingstats", element: <Trainingstats /> }
     ]
   }
 ]);

@@ -4,6 +4,7 @@ import { deleteTraining, fetchTrainings } from '../projectapi';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-material.css';
+
 import { Button } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -17,7 +18,7 @@ export default function Traininglist() {
     const handleFetchTraining = () => {
         fetchTrainings()
             .then(data => {
-                console.log("Fetched training data:", data);
+                // console.log("Fetched training data:", data);
                 setTrainings(data);
             })
             .catch(err => console.error("Error fetching data: ", err));
@@ -34,7 +35,6 @@ export default function Traininglist() {
         }
     };
 
-    // to format the ass looking date type
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         return date.toLocaleDateString('en-GB');
@@ -46,13 +46,10 @@ export default function Traininglist() {
             sortable: true,
             valueFormatter: params => formatDate(params.value),
             floatingFilter: true,
-            // calendar and range filter, cell format does not remove the time part
-            // need to remove the time for the filter to match
             filter: "agDateColumnFilter",
             filterParams: {
                 comparator: (filterLocalDateAtMidnight, cellValue) => {
                     const cellDate = new Date(cellValue);
-                    // Strip the time part from the date
                     const cellDateWithoutTime = new Date(cellDate.getFullYear(), cellDate.getMonth(), cellDate.getDate());
                     if (filterLocalDateAtMidnight.getTime() === cellDateWithoutTime.getTime()) {
                         return 0;

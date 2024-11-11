@@ -23,7 +23,7 @@ export default function Customerlist() {
     const handleFetch = () => {
         fetchCustomers()
             .then(data => {
-                console.log("Fetched customer data:", data);
+                // console.log("Fetched customer data:", data);
                 setCustomers(data._embedded.customers);
             })
             .catch(err => console.error("Error fetching data: ", err));

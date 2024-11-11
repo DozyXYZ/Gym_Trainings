@@ -14,17 +14,22 @@ export default function Trainingcalendar() {
     const handleFetchTraining = () => {
         fetchTrainings()
             .then(data => {
-                console.log("Fetched training data:", data);
+                // console.log("Fetched training data:", data);
                 setTrainings(data);
             })
             .catch(err => console.error("Error fetching data: ", err));
     };
 
-    const events = trainings.map(training => ({
-        title: training.activity,
-        start: new Date(training.date),
-        end: new Date(training.date)
-    }));
+    const events = trainings.map(training => {
+        const start = new Date(training.date);
+        const end = new Date(start.getTime() + training.duration * 60000);
+        return {
+            title: training.activity + " / " + training.customer.firstname + " " + training.customer.lastname,
+            start: start,
+            end: end
+        };
+
+    });
 
     return (
         <div>

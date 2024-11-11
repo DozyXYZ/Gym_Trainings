@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 import { editCustomer } from "../projectapi";
-import CustomerForm from "./CustomerForm";
+import Customerform from "./CustomerForm";
 
 export default function Editcustomer(props) {
     const [open, setOpen] = useState(false);
@@ -61,7 +61,7 @@ export default function Editcustomer(props) {
                         Edit the customer details
                     </DialogContentText>
 
-                    <CustomerForm customer={customer} handleInputChange={handleInputChange} />
+                    <Customerform customer={customer} handleInputChange={handleInputChange} />
                 </DialogContent>
 
                 <DialogActions>
