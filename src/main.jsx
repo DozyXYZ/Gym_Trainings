@@ -7,11 +7,13 @@ import Customerlist from './components/CustomerList.jsx';
 import Traininglist from './components/TrainingList.jsx';
 import Trainingcalendar from './components/TrainingCalendar.jsx';
 import Trainingstats from './components/TrainingStats.jsx';
+import Error from './components/Error.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     children: [
       { element: <Customerlist />, index: true },
       { path: "trainings", element: <Traininglist /> },
