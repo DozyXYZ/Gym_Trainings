@@ -4,7 +4,7 @@ import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } 
 import AddIcon from '@mui/icons-material/Add';
 import { saveTraining } from "../projectapi";
 
-import TrainingForm from "./TrainingForm";
+import Trainingform from "./TrainingForm";
 
 import { fetchCustomers } from "../projectapi";
 
@@ -70,7 +70,7 @@ export default function Trainingadd(props) {
                         Fill in the training details
                     </DialogContentText>
 
-                    <TrainingForm training={training} customers={customers} handleInputChange={handleInputChange} handleDateChange={handleDateChange} />
+                    <Trainingform training={training} customers={customers} handleInputChange={handleInputChange} handleDateChange={handleDateChange} />
                 </DialogContent>
 
                 <DialogActions>

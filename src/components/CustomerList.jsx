@@ -9,13 +9,14 @@ import 'ag-grid-community/styles/ag-theme-material.css';
 
 import { Button } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import SendIcon from '@mui/icons-material/Send';
 
 import Addcustomer from './CustomerAdd';
 import Editcustomer from './CustomerEdit';
 
-
 export default function Customerlist() {
     const [customers, setCustomers] = useState([]);
+    const [gridApi, setGridApi] = useState(null);
 
     useEffect(() => { handleFetch() }, []);
 
@@ -65,6 +66,18 @@ export default function Customerlist() {
         }
     ];
 
+    const onGridReady = (params) => {
+        setGridApi(params.api);
+    };
+
+    const onBtnExport = () => {
+        if (gridApi) {
+            gridApi.exportDataAsCsv();
+        } else {
+            console.error('Grid API is not set');
+        }
+    };
+
     return (
         <>
             <div className="ag-theme-material" style={{ width: "95%", height: "700px" }}>
@@ -75,10 +88,20 @@ export default function Customerlist() {
                     paginationAutoPageSize={true}
                     floatingFilter={true}
                     suppressCellFocus={true}
+                    onGridReady={onGridReady}
                 />
             </div>
 
             <Addcustomer handleFetch={handleFetch} />
+
+            <Button
+                variant="contained"
+                color="primary"
+                onClick={onBtnExport}
+                startIcon={<SendIcon />}
+            >
+                Export to CSV
+            </Button>
         </>
     );
 }

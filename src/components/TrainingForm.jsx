@@ -5,7 +5,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import MenuItem from '@mui/material/MenuItem';
 import dayjs from 'dayjs';
 
-export default function TrainingForm({ training, customers, handleDateChange, handleInputChange }) {
+export default function Trainingform({ training, customers, handleDateChange, handleInputChange }) {
     return (
         <>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
