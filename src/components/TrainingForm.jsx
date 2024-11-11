@@ -22,6 +22,7 @@ export default function Trainingform({ training, customers, handleDateChange, ha
                 margin="dense"
                 name="duration"
                 label="Duration"
+                type="number"
                 fullWidth
                 value={training.duration}
                 onChange={handleInputChange}
