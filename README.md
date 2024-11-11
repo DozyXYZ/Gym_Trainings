@@ -7,13 +7,9 @@ REST API: https://juhahinkula.github.io/personaltrainerdocs/
 ## Features
 
 - **Customer Management**: Add, edit, delete, and view customer details.
-- **Training Management**: Add, edit, delete, and view training sessions.
+- **Training Management**: Add, delete, and view training sessions.
 - **Calendar View**: View training sessions in a calendar format.
 - **Statistics**: View training statistics in a bar chart.
-
-## Project Structure
-
-. ├── .env ├── .gitignore ├── eslint.config.js ├── index.html ├── package.json ├── public/ ├── README.md ├── src/ │ ├── App.jsx │ ├── components/ │ │ ├── CustomerAdd.jsx │ │ ├── CustomerEdit.jsx │ │ ├── CustomerForm.jsx │ │ ├── CustomerList.jsx │ │ ├── TrainingAdd.jsx │ │ ├── TrainingCalendar.jsx │ │ ├── TrainingForm.jsx │ │ ├── TrainingList.jsx │ │ ├── TrainingStats.jsx │ ├── main.jsx │ ├── projectapi.js ├── vite.config.js
 
 ## Installation
 
