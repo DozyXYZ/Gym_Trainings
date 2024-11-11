@@ -1,8 +1,36 @@
-# React + Vite
+# Crimson Training
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Crimson Training is a React-based web application for managing customer training sessions. It provides functionalities to add, edit, delete, and view training sessions and customer details. The application also includes a calendar view for training sessions and statistical charts for training data.
 
-Currently, two official plugins are available:
+REST API: https://juhahinkula.github.io/personaltrainerdocs/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Customer Management**: Add, edit, delete, and view customer details.
+- **Training Management**: Add, delete, and view training sessions.
+- **Calendar View**: View training sessions in a calendar format.
+- **Statistics**: View training statistics in a bar chart.
+
+## Installation
+
+1. Clone the repository:
+    ```sh
+    git clone <repository-url>
+    cd personaltrainer
+    ```
+
+2. Install dependencies:
+    ```sh
+    npm install
+    ```
+
+3. Create a `.env` file in the root directory and add your API URL:
+    ```env
+    VITE_API_URL=<your-api-url>
+    ```
+
+## Running the Application
+
+To start the development server, run:
+```sh
+npm run dev
