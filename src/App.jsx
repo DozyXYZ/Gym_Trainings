@@ -20,6 +20,9 @@ function App() {
               <Button color="inherit">
                 <Link to="/trainings" style={{ textDecoration: 'none', color: 'inherit' }}>Trainings</Link>
               </Button>
+              <Button color="inherit">
+                <Link to="/trainingscalendar" style={{ textDecoration: 'none', color: 'inherit' }}>Calendar</Link>
+              </Button>
             </nav>
           </Toolbar>
         </AppBar>
